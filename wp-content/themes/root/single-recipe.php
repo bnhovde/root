@@ -19,17 +19,24 @@
 
 			<span class="post__date"><?php the_time('j M Y'); ?></span>
 
-			<h2 class="post__title">
+			<h1 class="post__title">
 				<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
-			</h2>
+			</h1>
 
 			<?php the_content(); // Dynamic Content ?>
 
-			<h3>Ingredients</h3>
-			<?php the_field('ingredients'); ?>
+			<p class="post__subtitle"><?php the_title(); ?></p>
+
+			<section class="post__section">
+				<h2 class="h3">Ingredients</h2>
+				<?php the_field('ingredients'); ?>
+			</section>
+
+			<section class="post__section">
+				<h2 class="h3">Directions</h2>
+				<?php the_field('directions'); ?>
+			</section>
 			
-			<h3>Directions</h3>
-			<?php the_field('directions'); ?>
 
 			<?php the_tags( __( 'Tags: ', 'html5blank' ), ', ', '<br>'); // Separated by commas with a line break at the end ?>
 			<p><?php _e( 'Categorised in: ', 'html5blank' ); the_category(', '); // Separated by commas ?></p>

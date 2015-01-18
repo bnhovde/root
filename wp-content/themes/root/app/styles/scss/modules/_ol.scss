@@ -1,0 +1,68 @@
+
+
+// *************************************
+//
+//   Ordered/Numbered list with custom
+//   numbering and a bold underline.
+//
+// *************************************
+
+
+// -------------------------------------
+//   Variables
+// -------------------------------------
+
+
+
+// -------------------------------------
+//   Base
+// -------------------------------------
+
+ol {
+
+    // Initiate counter
+    counter-reset: li;
+    padding: 0;
+
+    // -------------------------------------
+    //   Elements
+    // -------------------------------------
+
+
+    > li {
+
+        position: relative;
+        margin: 0 0 30px 55px;
+        list-style:none;
+        line-height: 30px;
+
+        &:before {
+            @include font-family("bold");
+            @include font-size(2);
+            
+            position:absolute;
+            left: -54px;
+            width: 30px;
+            text-align: center;
+            border-bottom: 5px solid #000;
+            line-height: 47.013156px;
+            line-height: 2.836068rem;
+
+            // Use the counter as content
+            content: counter(li);
+            // Increment by 1
+            counter-increment: li;
+        }
+    }
+
+
+    // -------------------------------------
+    //   Variations
+    // -------------------------------------
+
+
+    // ----- Variation description ----- // 
+
+    & -variation {}
+
+}

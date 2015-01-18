@@ -32,6 +32,10 @@
     font-family: 'PT Sans';
     font-weight: '400italic';
   }  
+  @if $family == "thin-title" {
+    font-family: 'Lato';
+    font-weight: 400;
+  }
   @if $family == "bold" {
     font-family: 'Lato';
     font-weight: 700; 

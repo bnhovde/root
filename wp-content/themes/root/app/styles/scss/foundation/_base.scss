@@ -17,22 +17,22 @@
 $base-font-size: 1.0625em; // Equals 17px
 $base-line-height: 1.411764706em; // Equals 24px;
 
-$h1-font-size: 6.588235294em;
-$h1-line: 0.214285714em;
-$h1-lines: 5;
+$h1-font-size: 3.529411765em;
+$h1-line: 0.34em;
+$h1-lines: 3;
 $h1-line-height: $h1-line * $h1-lines;
 $h1-margin-top: 2 * $h1-line;
 $h1-margin-bottom: 1 * $h1-line;
 
-$h2-font-size: 3.529411765em;
-$h2-line: 0.34em;
-$h2-lines: 3;
+$h2-font-size: 1.882352941em;
+$h2-line: 0.75em;
+$h2-lines: 2;
 $h2-line-height: $h2-line * $h2-lines;
-$h2-margin-top: 2 * $h2-line;
+$h2-margin-top: 1 * $h2-line;
 $h2-margin-bottom: 1 * $h2-line;
 
-$h3-font-size: 1.882352941em;
-$h3-line: 0.75em;
+$h3-font-size: 1.5em;
+$h3-line: 0.6em;
 $h3-lines: 2;
 $h3-line-height: $h3-line * $h3-lines;
 $h3-margin-top: 1 * $h3-line;
@@ -44,6 +44,7 @@ $h4-lines: 1;
 $h4-line-height: $h4-line * $h4-lines;
 $h4-margin-top: 1 * $h4-line;
 $h4-margin-bottom: 1 * $h4-line;
+
 
 // -------------------------------------
 //   Block Content
@@ -58,6 +59,10 @@ $h4-margin-bottom: 1 * $h4-line;
 
 html {
     @include font-family("default");
+
+    &.style-guide {
+        background-color: #DFDFDF;
+    }
 }
 
 body {
@@ -71,6 +76,14 @@ body {
         width: 90%;
         max-width: $site-max-width;
         margin: 0 auto;
+    }
+
+    &.style-guide-body {
+        width: 90%;
+        max-width: $site-max-width;
+        margin: 0 auto;
+        padding-top: 50px;
+        background-color: white;
     }
 }
 
@@ -105,40 +118,70 @@ sub {
 //   Inline Content
 // -------------------------------------
 
-h1, h2, h3, h4, .h1, .h2, .h3, .h4 {
+h1, h2, .h1, .h2, {
     @include font-family("bold"); 
     letter-spacing: -1px;
+    text-transform: uppercase;
+
 }
+
+h3, h4, h5, .h3, .h4, .h5 {
+    @include font-family("thin-title");
+}
+
 
 h1, .h1 {
     font-size: $h1-font-size;
     line-height: $h1-line-height;
     margin-top: $h1-margin-top;
     margin-bottom: $h1-margin-bottom;
-    text-transform: uppercase;
+
+    &:after {
+        content: '';
+        display: block;
+        width: 110px;
+        margin: 20px 0;
+        border-bottom: 10px solid $sitecol-1;
+    }
 }
 h2, .h2 {
     font-size: $h2-font-size;
     line-height: $h2-line-height;
     margin-top: $h2-margin-top;
     margin-bottom: $h2-margin-bottom;
-    text-transform: uppercase;
+    letter-spacing: 1px;
+
+    &:after {
+        content: '';
+        display: block;
+        width: 110px;
+        margin: 10px 0;
+        border-bottom: 5px solid $sitecol-1;
+    }
 }
 h3, .h3 {
     font-size: $h3-font-size;
     line-height: $h3-line-height;
     margin-top: $h3-margin-top;
     margin-bottom: $h3-margin-bottom;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+
+    &:after {
+        border-bottom: 0;
+    }
 }
+
 h4, .h4 {
     font-size: $h4-font-size;
     line-height: $h4-line-height;
     margin-top: $h4-margin-top;
     margin-bottom: $h4-margin-bottom;
 }
+
 p, ul, ol, pre, table, blockquote {
 
-    @include font-family("light");
+    @include font-family("default");
 
     margin-top: 1.41176471em;
     margin-bottom: 1.41176471em;

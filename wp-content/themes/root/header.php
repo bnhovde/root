@@ -7,7 +7,7 @@
 		<link href="//www.google-analytics.com" rel="dns-prefetch">
         <link href="<?php echo get_template_directory_uri(); ?>/img/icons/favicon.ico" rel="shortcut icon">
         <link href="<?php echo get_template_directory_uri(); ?>/img/icons/touch.png" rel="apple-touch-icon-precomposed">
-        <link href='http://fonts.googleapis.com/css?family=Lato:700,900' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Lato:400,700,900' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,400italic' rel='stylesheet' type='text/css'>
 
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -26,6 +26,11 @@
 					<div class="logo">
 						<a class="logo__text" href="<?php echo home_url(); ?>">root.</a>
 					</div>
+
+					<a class="burger" href="#" ui-menu-btn>
+						<i class="line"></i>
+						<i class="line"></i>
+					</a>
 
 					<nav class="nav" role="navigation">
 						<?php html5blank_nav(); ?>

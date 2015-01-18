@@ -2,7 +2,7 @@
 
 // *************************************
 //
-//   Front page post (for the loop)
+//   Recipe post type
 //
 // *************************************
 
@@ -50,14 +50,30 @@ $post-max-width: $site-max-width;
 
     &__title {
         margin-top: 0;
+    }
 
-        &:after {
-            content: '';
-            display: block;
-            width: 110px;
-            margin: 20px 0;
-            border-bottom: 10px solid $sitecol-1;
-        }
+    &__subtitle {
+        @extend .h2;
+        
+        margin: 50px 0 40px 0;
+    }
+
+    &__section {
+
+        margin-bottom: 40px;
+    }
+
+    // ----- Other post elements ----- // 
+
+    ul > li {
+        margin-bottom: 0.7em;
+        font-style: italic;
+        letter-spacing: 1px;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
     }
 
     // -------------------------------------
