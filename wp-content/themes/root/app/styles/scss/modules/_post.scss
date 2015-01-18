@@ -1,0 +1,72 @@
+
+
+// *************************************
+//
+//   Front page post (for the loop)
+//
+// *************************************
+
+
+// -------------------------------------
+//   Variables
+// -------------------------------------
+
+$post-max-width: $site-max-width;
+
+
+// -------------------------------------
+//   Base
+// -------------------------------------
+
+.post {
+
+    border-bottom: 5px dotted black;
+    margin-bottom: 2em;
+    padding-bottom: 1em;
+
+    // -------------------------------------
+    //   Elements
+    // -------------------------------------
+
+
+    // ----- Large featured image ----- // 
+
+    &__featured-image {
+
+        width: 100%;
+        max-width: $post-max-width;
+
+    }
+
+    &__date {
+        @include font-size(1);
+
+        line-height: 40px;
+        line-height: 2.5rem;
+        font-style: italic;
+        color: $sitecol-1;
+        text-transform: uppercase;
+    }
+
+    &__title {
+        margin-top: 0;
+
+        &:after {
+            content: '';
+            display: block;
+            width: 110px;
+            margin: 20px 0;
+            border-bottom: 10px solid $sitecol-1;
+        }
+    }
+
+    // -------------------------------------
+    //   Variations
+    // -------------------------------------
+
+
+    // ----- Variation description ----- // 
+
+    & -variation {}
+
+}
