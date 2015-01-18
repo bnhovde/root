@@ -54,8 +54,6 @@ License
 MIT
 
 
-**Free Software, Hell Yeah!**
-
 [html5blank]:http://html5blank.com/
 [cdd]:http://twitter.com/cddnation
 [here]:https://github.com/cddlimited/FED-Guidelines
