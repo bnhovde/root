@@ -12,6 +12,7 @@
 // -------------------------------------
 
 $nav-color: $sitecol-1;
+$nav-color-active: white;
 
 
 // -------------------------------------
@@ -23,6 +24,8 @@ $nav-color: $sitecol-1;
     border-bottom: 10px solid $nav-color;
     margin-bottom: 10px;
 
+    transition: all 0.3s ease-in-out;
+
     // -------------------------------------
     //   Elements
     // -------------------------------------
@@ -30,13 +33,22 @@ $nav-color: $sitecol-1;
     // ----- Flex container ----- // 
 
     > ul {
-        display: table; // fallback for non-flexbox
+        display: block; // fallback for non-flexbox
         width: 100%; // if displayed as table make sure it is 100% width
         margin: 10px 0;
+        max-height: 0;
+        overflow: hidden;
+
+        transition: max-height 0.3s ease-in-out;
 
         @include breakpoint("teen-bear") {
             display: flex;
             justify-content: space-between;
+            max-height: 1000px;
+        }
+
+        [ui-menu-state="is-open"] & {
+            max-height: 1000px;
         }
 
     }
@@ -55,11 +67,19 @@ $nav-color: $sitecol-1;
             @include font-size(1.3);
             @include font-family("bolder");
 
-            // display: block;
-            // width: 100%;
-            // text-align: center;
             text-transform: uppercase;
             color: $nav-color;
+            transition: color 0.3s ease-in-out;
+
+        }
+    }
+
+    [ui-menu-state="is-open"] & {
+
+        border-bottom: 10px solid $nav-color-active;
+
+        .menu-item a {
+            color: $nav-color-active;
         }
     }
 

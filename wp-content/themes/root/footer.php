@@ -16,6 +16,8 @@
 
 		<?php wp_footer(); ?>
 
+		<script src="<?php echo get_template_directory_uri(); ?>/app/scripts/main.js"></script>
+
 		<!-- analytics -->
 		<script>
 		(function(f,i,r,e,s,h,l){i['GoogleAnalyticsObject']=s;f[s]=f[s]||function(){

@@ -72,10 +72,16 @@ body {
     margin: 0;
     padding: 0;
 
+    transition: background-color 0.3s ease-in-out;
+
     > .wrapper {
         width: 90%;
         max-width: $site-max-width;
         margin: 0 auto;
+    }
+
+    &[ui-menu-state="is-open"] {
+        background-color: $sitecol-1;
     }
 
     &.style-guide-body {
@@ -192,3 +198,14 @@ a {
     color: $sitecol-1;
 }
 
+
+// Elements that hide when menu is focused
+
+img, hr, form {
+
+    transition: opacity 0.2s ease-in-out;
+    
+    [ui-menu-state="is-open"] & {
+        opacity: 0;
+    }
+}

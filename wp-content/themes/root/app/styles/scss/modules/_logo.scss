@@ -12,6 +12,7 @@
 // -------------------------------------
 
 $logo-color: $sitecol-1;
+$logo-color-active: white;
 
 
 // -------------------------------------
@@ -21,7 +22,11 @@ $logo-color: $sitecol-1;
 .logo {
 
     width: 100%;
-    text-align: center;
+    text-align: left;
+
+    @include breakpoint("teen-bear") {
+        text-align: center;
+    }
 
     // -------------------------------------
     //   Elements
@@ -35,9 +40,19 @@ $logo-color: $sitecol-1;
         @include font-size(5);
         @include font-family("bolder");
 
-        line-height: 3em;
+        line-height: 2em;
         text-transform: lowercase;
         color: $logo-color;
+
+        transition: color 0.3s ease-in-out;
+
+        @include breakpoint("teen-bear") {
+            line-height: 3em;
+        }
+
+        [ui-menu-state="is-open"] & {
+            color: $logo-color-active;
+        }
     }
 
 

@@ -23,14 +23,13 @@
 
 			<header class="header clear" role="banner">
 
+					<a class="burger" href="#" ui-menu-btn>
+						<i class="burger__hl"></i>
+					</a>
+
 					<div class="logo">
 						<a class="logo__text" href="<?php echo home_url(); ?>">root.</a>
 					</div>
-
-					<a class="burger" href="#" ui-menu-btn>
-						<i class="line"></i>
-						<i class="line"></i>
-					</a>
 
 					<nav class="nav" role="navigation">
 						<?php html5blank_nav(); ?>

@@ -1,0 +1,112 @@
+
+// *************************************
+//
+//  Navigation Burger Icon
+//  -> Animates on hover
+//  ! requires js for closed state
+
+//  BLOCK burger
+//  ELEMENT line
+//     STA is-open 
+
+//
+// *************************************
+
+// -------------------------------------
+//   Variables
+// -------------------------------------
+
+$main-bar-burger-col: black;
+$main-bar-burger-active-col: white;
+$main-bar-burger-width: 60px;
+$main-bar-burger-height: 10px;
+
+
+// -------------------------------------
+//   Base
+// -------------------------------------
+
+.burger {
+
+    float: right;
+    width: $main-bar-burger-width;
+    height: $main-bar-burger-height * 5;
+    border: 0;
+    // background-color: transparent;
+    transition: .3s;
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+    z-index: 103;
+    /* */
+
+    &:hover { opacity: 1; }
+    &:active { transition: 0; }
+    &:focus { outline: none; }
+    &::-moz-focus-inner { border: 0; }
+
+
+    // -------------------------------------
+    //   Components
+    // -------------------------------------
+    
+    // ----- Horizonal Line (burger layer) ----- // 
+
+    &__hl {
+
+        display: block;
+        position: relative;
+
+        &:before,
+        &:after {
+            @include cross-browser-inline-block;
+            content: '';
+            position: absolute;
+            left: 0;
+            width: $main-bar-burger-width;
+            height: $main-bar-burger-height;
+            background: $main-bar-burger-col;
+            transition: 0.3s;
+            transform-origin: center center;
+        }
+
+        &:before { top: $main-bar-burger-height; }
+        &:after { top: $main-bar-burger-height * 3; }
+    }
+
+    // -------------------------------------
+    //   States
+    // -------------------------------------
+
+    // ----- Horizonal Line (burger layer) ----- //
+
+    &__hl {
+
+        [ui-menu-state="is-open"] & { 
+            background: transparent; 
+
+            &:before,
+            &:after {
+                // transform-origin: 50% 50%;
+                top: $main-bar-burger-height * 2;
+                background: $main-bar-burger-active-col;
+            }
+
+            &:before { transform: rotate3d(0, 0, 1, 45deg); }
+            &:after { transform: rotate3d(0, 0, 1, -45deg); }
+        }
+    }
+}
+
+// -------------------------------------
+//   Custom
+// -------------------------------------
+
+// ----- Custom tweaks to the burger module for this site ----- //
+
+.burger {
+    margin-top: 60px;
+    @include breakpoint("teen-bear") {
+        margin-top: 100px;
+    }
+}
