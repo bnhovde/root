@@ -448,4 +448,63 @@ function html5_shortcode_demo_2($atts, $content = null) // Demo Heading H2 short
     return '<h2>' . $content . '</h2>';
 }
 
+
+
+
+/*------------------------------------*\
+    ACF Functions
+\*------------------------------------*/
+
+define( 'ACF_LITE', true );
+include_once('plugins/advanced-custom-fields/acf.php');
+
+if(function_exists("register_field_group"))
+{
+    register_field_group(array (
+        'id' => 'acf_recipe-fields',
+        'title' => 'Recipe Fields',
+        'fields' => array (
+            array (
+                'key' => 'field_54ab9657bc4d3',
+                'label' => 'Ingredients',
+                'name' => 'ingredients',
+                'type' => 'wysiwyg',
+                'instructions' => 'Add a list of ingredients. Make sure you use a list for this.',
+                'default_value' => '',
+                'toolbar' => 'basic',
+                'media_upload' => 'no',
+            ),
+            array (
+                'key' => 'field_54ab97e9bc4d4',
+                'label' => 'directions',
+                'name' => 'directions',
+                'type' => 'wysiwyg',
+                'instructions' => 'Steps to follow. Make sure you use a list for this.',
+                'default_value' => '',
+                'toolbar' => 'basic',
+                'media_upload' => 'no',
+            ),
+        ),
+        'location' => array (
+            array (
+                array (
+                    'param' => 'post_type',
+                    'operator' => '==',
+                    'value' => 'recipe',
+                    'order_no' => 0,
+                    'group_no' => 0,
+                ),
+            ),
+        ),
+        'options' => array (
+            'position' => 'normal',
+            'layout' => 'no_box',
+            'hide_on_screen' => array (
+                0 => 'custom_fields',
+            ),
+        ),
+        'menu_order' => 0,
+    ));
+}
+
 ?>
