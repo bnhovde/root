@@ -1,6 +1,5 @@
 <?php query_posts( array(
 	'post_type' => array( 'post', 'recipe' ),
-	'cat' => 3,
 	'showposts' => 5 )
 ); ?>
 
