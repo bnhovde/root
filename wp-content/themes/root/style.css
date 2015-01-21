@@ -1,4 +1,4 @@
-@charset "CP850";
+@charset "Windows-1252";
 /*! normalize.css v3.0.0 | MIT License | git.io/normalize */
 /**
  * 1. Set default font family to sans-serif.
@@ -451,17 +451,17 @@ th {
 \*------------------------------------*/
 /**
  * If you are building a non-responsive site but would still like to use
- * csswizardry-grids, set this to ‘false’:
+ * csswizardry-grids, set this to ���false���:
  */
 /**
- * Is this build mobile first? Setting to ‘true’ means that all grids will be
+ * Is this build mobile first? Setting to ���true��� means that all grids will be
  * 100% width if you do not apply a more specific class to them.
  */
 /**
  * Set the spacing between your grid items.
  */
 /**
- * Would you like Sass’ silent classes, or regular CSS classes?
+ * Would you like Sass��� silent classes, or regular CSS classes?
  */
 /**
  * Would you like push and pull classes enabled?
@@ -491,11 +491,11 @@ th {
  * add and remove breakpoints at will.
  *
  * Push and pull shall only be used if `$push` and/or `$pull` and `$responsive`
- * have been set to ‘true’.
+ * have been set to ���true���.
  */
 /**
  * You do not need to edit anything from this line onward; csswizardry-grids is
- * good to go. Happy griddin’!
+ * good to go. Happy griddin���!
  */
 /*------------------------------------*\
     $MIXINS
@@ -507,7 +507,7 @@ th {
  * Enclose a block of code with a media query as named in `$breakpoints`.
  */
 /**
- * Drop relative positioning into silent classes which can’t take advantage of
+ * Drop relative positioning into silent classes which can���t take advantage of
  * the `[class*="push--"]` and `[class*="pull--"]` selectors.
  */
 /*------------------------------------*\
@@ -516,7 +516,7 @@ th {
 /**
  * 1. Allow the grid system to be used on lists.
  * 2. Remove any margins and paddings that might affect the grid system.
- * 3. Apply a negative `margin-left` to negate the columns’ gutters.
+ * 3. Apply a negative `margin-left` to negate the columns��� gutters.
  */
 .grid {
   list-style: none;
@@ -1511,49 +1511,6 @@ img, hr, form {
   color: white;
 }
 
-.nav {
-  border-bottom: 10px solid #1a1a1a;
-  margin-bottom: 10px;
-  transition: all 0.3s ease-in-out;
-}
-.nav > ul {
-  display: block;
-  width: 100%;
-  margin: 10px 0;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.3s ease-in-out;
-}
-@media (min-width: 48em) {
-  .nav > ul {
-    display: -webkit-flex;
-    display: flex;
-    -webkit-justify-content: space-between;
-            justify-content: space-between;
-    max-height: 1000px;
-  }
-}
-[ui-menu-state="is-open"] .nav > ul {
-  max-height: 1000px;
-}
-.nav .menu-item > a {
-  font-size: 22.1px;
-  line-height: 35.758551179px;
-  font-size: 1.3rem;
-  line-height: 2.103444187rem;
-  font-family: 'Lato';
-  font-weight: 900;
-  text-transform: uppercase;
-  color: #1a1a1a;
-  transition: color 0.3s ease-in-out;
-}
-[ui-menu-state="is-open"] .nav {
-  border-bottom: 10px solid white;
-}
-[ui-menu-state="is-open"] .nav .menu-item a {
-  color: white;
-}
-
 .burger {
   float: right;
   width: 60px;
@@ -1635,6 +1592,86 @@ img, hr, form {
   .burger {
     margin-top: 100px;
   }
+}
+
+.nav > ul:first-child {
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+  max-height: 0;
+  padding-bottom: 10px;
+  border-bottom: 10px solid #1a1a1a;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+}
+@media (min-width: 48em) {
+  .nav > ul:first-child {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: space-between;
+            justify-content: space-between;
+    max-height: 1000px;
+  }
+}
+[ui-menu-state="is-open"] .nav > ul:first-child {
+  max-height: 1000px;
+  border-bottom: 10px solid white;
+}
+.nav .menu-item > a {
+  font-size: 22.1px;
+  line-height: 35.758551179px;
+  font-size: 1.3rem;
+  line-height: 2.103444187rem;
+  font-family: 'Lato';
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #1a1a1a;
+  transition: color 0.3s ease-in-out;
+}
+[ui-menu-state="is-open"] .nav .menu-item a {
+  color: white;
+}
+
+.mega-menu {
+  background-color: #1a1a1a;
+  color: white;
+}
+.mega-menu a {
+  color: white;
+}
+.mega-menu__item {
+  display: inline-block;
+  /* For normal, healthy browsers */
+  width: 100%;
+  vertical-align: top;
+}
+* html .mega-menu__item {
+  /* for IE6 */
+  display: inline;
+}
+* + html .mega-menu__item {
+  /* for IE7 */
+  display: inline;
+}
+@media (min-width: 48em) {
+  .mega-menu__item {
+    width: 50%;
+  }
+}
+.mega-menu__item p {
+  font-family: 'Lato';
+  font-weight: 400;
+  font-size: 20.4px;
+  line-height: 33.007893396px;
+  font-size: 1.2rem;
+  line-height: 1.941640788rem;
+  margin: 1em 0;
+  letter-spacing: 0.8px;
+}
+.mega-menu__item li {
+  font-family: 'Lato';
+  font-weight: 300;
+  margin: 0.3em 0;
 }
 
 .post {

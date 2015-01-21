@@ -11,7 +11,7 @@
 //   Variables
 // -------------------------------------
 
-$nav-color: $sitecol-1;
+$nav-color: $site-col-1;
 $nav-color-active: white;
 
 
@@ -21,25 +21,22 @@ $nav-color-active: white;
 
 .nav {
 
-    border-bottom: 10px solid $nav-color;
-    margin-bottom: 10px;
-
-    transition: all 0.3s ease-in-out;
-
     // -------------------------------------
     //   Elements
     // -------------------------------------
 
     // ----- Flex container ----- // 
 
-    > ul {
+    > ul:first-child {
         display: block; // fallback for non-flexbox
         width: 100%; // if displayed as table make sure it is 100% width
         margin: 10px 0;
         max-height: 0;
+        padding-bottom: 10px;
+        border-bottom: 10px solid $nav-color;
         overflow: hidden;
 
-        transition: max-height 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
 
         @include breakpoint("teen-bear") {
             display: flex;
@@ -49,6 +46,7 @@ $nav-color-active: white;
 
         [ui-menu-state="is-open"] & {
             max-height: 1000px;
+            border-bottom: 10px solid $nav-color-active;
         }
 
     }
@@ -75,8 +73,6 @@ $nav-color-active: white;
     }
 
     [ui-menu-state="is-open"] & {
-
-        border-bottom: 10px solid $nav-color-active;
 
         .menu-item a {
             color: $nav-color-active;

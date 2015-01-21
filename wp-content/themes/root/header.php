@@ -7,7 +7,7 @@
 		<link href="//www.google-analytics.com" rel="dns-prefetch">
         <link href="<?php echo get_template_directory_uri(); ?>/img/icons/favicon.ico" rel="shortcut icon">
         <link href="<?php echo get_template_directory_uri(); ?>/img/icons/touch.png" rel="apple-touch-icon-precomposed">
-        <link href='http://fonts.googleapis.com/css?family=Lato:400,700,900' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,400italic' rel='stylesheet' type='text/css'>
 
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -32,6 +32,64 @@
 					</div>
 
 					<nav class="nav" role="navigation">
+
 						<?php html5blank_nav(); ?>
+
+						<ul class="mega-menu" ui-mega-menu>
+
+							<li class="mega-menu__item">
+								<p>5 Most Popular Recipes</p>
+								<ul>
+									<li><a href="#" title="">Banan-o-rama loaf with nuts and stuff</a></li>
+									<li><a href="#" title="">Totally sweet muffins with seed of the poppy</a></li>
+									<li><a href="#" title="">Tag Here Too</a></li>
+									<li><a href="#" title="">Banan-o-rama loaf with nuts</a></li>
+									<li><a href="#" title="">Tag Here Tag Here</a></li>
+								</ul>
+
+								<p>5 Latest Recipes</p>
+								<ul>
+									<li><a href="#" title="">Tag Here Too</a></li>
+									<li><a href="#" title="">Totally sweet muffins with seed of the poppy</a></li>
+									<li><a href="#" title="">Banan-o-rama loaf with nuts</a></li>
+									<li><a href="#" title="">Banan-o-rama loaf with nuts and stuff</a></li>
+									<li><a href="#" title="">Tag Here Tag Here</a></li>
+								</ul>
+
+								<p>Share The Love</p>
+								<ul>
+									<li><a href="#" title="">Link</a></li>
+									<li><a href="#" title="">Link</a></li>
+									<li><a href="#" title="">Link</a></li>
+									<li><a href="#" title="">Link</a></li>
+									<li><a href="#" title="">Link</a></li>
+								</ul>
+							</li><!-- 
+						 --><li class="mega-menu__item">
+								<div class="search">
+									<form action="search" method="get" accept-charset="utf-8">
+										<input type="text" name="search" value="" placeholder="Search for recipes/ingredients">
+									</form>
+									<ul id="results"></ul>
+								</div>
+
+								<p>Popular Tags &amp; Ingredients</p>
+								<ul>
+									<li><a href="#" title="">Tag</a></li>
+									<li><a href="#" title="">Tag Here</a></li>
+									<li><a href="#" title="">Tag Here Too</a></li>
+									<li><a href="#" title="">Tag Here</a></li>
+									<li><a href="#" title="">Tag Here</a></li>
+									<li><a href="#" title="">Tag</a></li>
+									<li><a href="#" title="">Tag Here</a></li>
+									<li><a href="#" title="">Tag Here Too</a></li>
+									<li><a href="#" title="">Tag Here</a></li>
+									<li><a href="#" title="">Tag Here</a></li>
+								</ul>
+							</li>
+
+						</ul>
+
+
 					</nav>
 			</header>

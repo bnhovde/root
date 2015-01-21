@@ -68,7 +68,7 @@ html {
 body {
     font-size: $base-font-size;
     line-height: $base-line-height;
-    color: $sitecol-1;
+    color: $site-col-1;
     margin: 0;
     padding: 0;
 
@@ -81,7 +81,7 @@ body {
     }
 
     &[ui-menu-state="is-open"] {
-        background-color: $sitecol-1;
+        background-color: $site-col-1;
     }
 
     &.style-guide-body {
@@ -147,7 +147,7 @@ h1, .h1 {
         display: block;
         width: 110px;
         margin: 20px 0;
-        border-bottom: 10px solid $sitecol-1;
+        border-bottom: 10px solid $site-col-1;
     }
 }
 h2, .h2 {
@@ -162,7 +162,7 @@ h2, .h2 {
         display: block;
         width: 110px;
         margin: 10px 0;
-        border-bottom: 5px solid $sitecol-1;
+        border-bottom: 5px solid $site-col-1;
     }
 }
 h3, .h3 {
@@ -195,7 +195,7 @@ p, ul, ol, pre, table, blockquote {
 
 a {
     text-decoration:none;
-    color: $sitecol-1;
+    color: $site-col-1;
 }
 
 

@@ -1,0 +1,72 @@
+
+
+// *************************************
+//
+//   Mega-menu Dropdown
+//
+// *************************************
+
+
+// -------------------------------------
+//   Variables
+// -------------------------------------
+
+$menu-col-pri: $site-col-1;
+$menu-col-sec: $white;
+
+
+// -------------------------------------
+//   Base
+// -------------------------------------
+
+.mega-menu {
+
+    background-color: $menu-col-pri;
+    color: $menu-col-sec;
+
+
+    // -------------------------------------
+    //   Elements
+    // -------------------------------------
+
+    a { color: $menu-col-sec; }
+
+
+    // ----- Menu item ----- // 
+
+    &__item {
+        @include cross-browser-inline-block;
+        
+        width: 100%;
+        vertical-align: top;
+
+        @include breakpoint("teen-bear") {
+            width: 50%;
+        }
+
+        p {
+            @include font-family("thin-title");
+            @include font-size(1.2);
+
+            margin: 1em 0;
+            letter-spacing: 0.8px;
+        }
+
+        li {
+            @include font-family("thinner-title");
+
+            margin: 0.3em 0;
+        }
+    }
+
+
+    // -------------------------------------
+    //   Variations
+    // -------------------------------------
+
+
+    // ----- Variation description ----- // 
+
+    & -variation {}
+
+}
