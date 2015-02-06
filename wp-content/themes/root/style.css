@@ -1,4 +1,4 @@
-@charset "Windows-1252";
+@charset "CP850";
 /*! normalize.css v3.0.0 | MIT License | git.io/normalize */
 /**
  * 1. Set default font family to sans-serif.
@@ -451,17 +451,17 @@ th {
 \*------------------------------------*/
 /**
  * If you are building a non-responsive site but would still like to use
- * csswizardry-grids, set this to ���false���:
+ * csswizardry-grids, set this to ‘false’:
  */
 /**
- * Is this build mobile first? Setting to ���true��� means that all grids will be
+ * Is this build mobile first? Setting to ‘true’ means that all grids will be
  * 100% width if you do not apply a more specific class to them.
  */
 /**
  * Set the spacing between your grid items.
  */
 /**
- * Would you like Sass��� silent classes, or regular CSS classes?
+ * Would you like Sass’ silent classes, or regular CSS classes?
  */
 /**
  * Would you like push and pull classes enabled?
@@ -491,11 +491,11 @@ th {
  * add and remove breakpoints at will.
  *
  * Push and pull shall only be used if `$push` and/or `$pull` and `$responsive`
- * have been set to ���true���.
+ * have been set to ‘true’.
  */
 /**
  * You do not need to edit anything from this line onward; csswizardry-grids is
- * good to go. Happy griddin���!
+ * good to go. Happy griddin’!
  */
 /*------------------------------------*\
     $MIXINS
@@ -507,7 +507,7 @@ th {
  * Enclose a block of code with a media query as named in `$breakpoints`.
  */
 /**
- * Drop relative positioning into silent classes which can���t take advantage of
+ * Drop relative positioning into silent classes which can’t take advantage of
  * the `[class*="push--"]` and `[class*="pull--"]` selectors.
  */
 /*------------------------------------*\
@@ -516,7 +516,7 @@ th {
 /**
  * 1. Allow the grid system to be used on lists.
  * 2. Remove any margins and paddings that might affect the grid system.
- * 3. Apply a negative `margin-left` to negate the columns��� gutters.
+ * 3. Apply a negative `margin-left` to negate the columns’ gutters.
  */
 .grid {
   list-style: none;
@@ -1594,6 +1594,9 @@ img, hr, form {
   }
 }
 
+.nav {
+  position: relative;
+}
 .nav > ul:first-child {
   display: block;
   width: 100%;
@@ -1633,8 +1636,15 @@ img, hr, form {
 }
 
 .mega-menu {
-  background-color: #1a1a1a;
+  position: absolute;
+  width: 100%;
   color: white;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+[ui-menu-state="is-open"] .mega-menu {
+  opacity: 1;
+  z-index: 1;
 }
 .mega-menu a {
   color: white;

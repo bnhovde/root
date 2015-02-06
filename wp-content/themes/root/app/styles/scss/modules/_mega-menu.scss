@@ -21,9 +21,17 @@ $menu-col-sec: $white;
 
 .mega-menu {
 
-    background-color: $menu-col-pri;
+    position: absolute;
+    width: 100%;
     color: $menu-col-sec;
+    opacity: 0;
 
+    transition: opacity 0.3s ease-in-out;
+
+    [ui-menu-state="is-open"] & {
+        opacity: 1;
+        z-index: 1;
+    }
 
     // -------------------------------------
     //   Elements
