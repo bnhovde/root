@@ -1360,9 +1360,6 @@ body > .wrapper {
   max-width: 764px;
   margin: 0 auto;
 }
-body[ui-menu-state="is-open"] {
-  background-color: #1a1a1a;
-}
 body.style-guide-body {
   width: 90%;
   max-width: 764px;
@@ -1474,13 +1471,6 @@ a {
   color: #1a1a1a;
 }
 
-img, hr, form {
-  transition: opacity 0.2s ease-in-out;
-}
-[ui-menu-state="is-open"] img, [ui-menu-state="is-open"] hr, [ui-menu-state="is-open"] form {
-  opacity: 0;
-}
-
 .logo {
   width: 100%;
   text-align: left;
@@ -1514,7 +1504,7 @@ img, hr, form {
 .burger {
   float: right;
   width: 60px;
-  height: 50px;
+  height: 60px;
   border: 0;
   transition: .3s;
   cursor: pointer;
@@ -1550,7 +1540,7 @@ img, hr, form {
   left: 0;
   width: 60px;
   height: 10px;
-  background: black;
+  background: #1a1a1a;
   transition: 0.3s;
   -webkit-transform-origin: center center;
           transform-origin: center center;
@@ -1564,10 +1554,10 @@ img, hr, form {
   display: inline;
 }
 .burger__hl:before {
-  top: 10px;
+  top: 15px;
 }
 .burger__hl:after {
-  top: 30px;
+  top: 35px;
 }
 [ui-menu-state="is-open"] .burger__hl {
   background: transparent;
@@ -1640,6 +1630,7 @@ img, hr, form {
   width: 100%;
   color: white;
   opacity: 0;
+  z-index: -1;
   transition: opacity 0.3s ease-in-out;
 }
 [ui-menu-state="is-open"] .mega-menu {
@@ -1678,10 +1669,23 @@ img, hr, form {
   margin: 1em 0;
   letter-spacing: 0.8px;
 }
+.mega-menu__item p:first-child {
+  margin-top: 0;
+}
 .mega-menu__item li {
   font-family: 'Lato';
   font-weight: 300;
   margin: 0.3em 0;
+}
+.mega-menu__item form {
+  margin: 10px 0 30px 0;
+}
+
+[ui-hide-when-menu] {
+  transition: opacity 0.3s ease-in-out;
+}
+[ui-menu-state="is-open"] [ui-hide-when-menu] {
+  opacity: 0;
 }
 
 .post {
@@ -1749,4 +1753,43 @@ ol > li:before {
   line-height: 2.836068rem;
   content: counter(li);
   counter-increment: li;
+}
+
+.search__input {
+  width: 100%;
+  line-height: 45px;
+  color: #1a1a1a;
+  border: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.exploder {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  background-color: white;
+}
+.exploder__core {
+  background-color: #1a1a1a;
+  width: 60px;
+  height: 60px;
+  display: block;
+  border-radius: 50%;
+  opacity: 0;
+  transition: -webkit-transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out;
+}
+[ui-menu-state="is-open"] .exploder__core {
+  opacity: 1;
+  -webkit-transform: scale(40);
+          transform: scale(40);
+}
+[ui-menu-state="is-closing"] .exploder__core {
+  opacity: 1;
+  transition: all 0.25s ease-out;
 }

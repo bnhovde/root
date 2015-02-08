@@ -16,7 +16,7 @@
 //   Variables
 // -------------------------------------
 
-$main-bar-burger-col: black;
+$main-bar-burger-col: $site-col-1;
 $main-bar-burger-active-col: white;
 $main-bar-burger-width: 60px;
 $main-bar-burger-height: 10px;
@@ -30,7 +30,7 @@ $main-bar-burger-height: 10px;
 
     float: right;
     width: $main-bar-burger-width;
-    height: $main-bar-burger-height * 5;
+    height: $main-bar-burger-height * 6;
     border: 0;
     // background-color: transparent;
     transition: .3s;
@@ -70,8 +70,8 @@ $main-bar-burger-height: 10px;
             transform-origin: center center;
         }
 
-        &:before { top: $main-bar-burger-height; }
-        &:after { top: $main-bar-burger-height * 3; }
+        &:before { top: $main-bar-burger-height * 1.5; }
+        &:after { top: $main-bar-burger-height * 3.5; }
     }
 
     // -------------------------------------

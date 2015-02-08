@@ -17,7 +17,7 @@
 		<?php wp_head(); ?>
 
 	</head>
-	<body <?php body_class(); ?>>
+	<body <?php body_class(); ?> ui-menu-state>
 
 		<div class="wrapper">
 
@@ -66,13 +66,7 @@
 								</ul>
 							</li><!-- 
 						 --><li class="mega-menu__item">
-								<div class="search">
-									<form action="search" method="get" accept-charset="utf-8">
-										<input type="text" name="search" value="" placeholder="Search for recipes/ingredients">
-									</form>
-									<ul id="results"></ul>
-								</div>
-
+								<?php get_template_part('searchform'); ?>
 								<p>Popular Tags &amp; Ingredients</p>
 								<ul>
 									<li><a href="#" title="">Tag</a></li>

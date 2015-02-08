@@ -38,7 +38,8 @@ var app = app || {};
 
         this.domElements = {
             body: $('body'),
-            menuBtn: $('[ui-menu-btn]')
+            menuBtn: $('[ui-menu-btn]'),
+            exploder: $('[ui-exploder] > i')
         };
 
         var d = this.d = this.domElements;
@@ -64,6 +65,7 @@ var app = app || {};
 
             d.body.attr('ui-initialized', 'true');
 
+            self.positionExploder();
             self.attachEventListeners();
 
         };
@@ -80,6 +82,7 @@ var app = app || {};
             s.screenWidth = $(window).width();
             s.screenHeight = $(window).height();
 
+            self.positionExploder();
         };
 
         /**
@@ -118,10 +121,28 @@ var app = app || {};
                 d.body.attr('ui-menu-state', 'is-closing');
                 setTimeout(function() {
                     d.body.attr('ui-menu-state', '');
-                }, 500);
+                }, 250);
             } else {
                 d.body.attr('ui-menu-state', 'is-open');
             }
+
+        };
+
+        /** 
+         * RESIZE EVENT - positionExploder function
+         * @event
+         */
+
+        this.positionExploder = function() {
+
+            // Ensure menu isn't already open
+            if (d.body.attr('ui-menu-state') !== '' ) { return; }
+
+            d.exploder.offset(
+                { 
+                    top: d.menuBtn.offset().top, 
+                    left: d.menuBtn.offset().left
+                });
 
         };
 

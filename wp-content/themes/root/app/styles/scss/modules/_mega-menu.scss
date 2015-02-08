@@ -25,6 +25,7 @@ $menu-col-sec: $white;
     width: 100%;
     color: $menu-col-sec;
     opacity: 0;
+    z-index: -1;
 
     transition: opacity 0.3s ease-in-out;
 
@@ -52,18 +53,24 @@ $menu-col-sec: $white;
             width: 50%;
         }
 
+
         p {
             @include font-family("thin-title");
             @include font-size(1.2);
 
             margin: 1em 0;
             letter-spacing: 0.8px;
+            &:first-child { margin-top: 0; }
         }
 
         li {
             @include font-family("thinner-title");
 
             margin: 0.3em 0;
+        }
+
+        form {
+            margin: 10px 0 30px 0;
         }
     }
 
@@ -77,4 +84,15 @@ $menu-col-sec: $white;
 
     & -variation {}
 
+}
+
+// Elements that hide when menu is focused
+
+[ui-hide-when-menu] {
+
+    transition: opacity 0.3s ease-in-out;
+    
+    [ui-menu-state="is-open"] & {
+        opacity: 0;
+    }
 }

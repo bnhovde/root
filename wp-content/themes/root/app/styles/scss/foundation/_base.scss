@@ -81,7 +81,7 @@ body {
     }
 
     &[ui-menu-state="is-open"] {
-        background-color: $site-col-1;
+        // background-color: $site-col-1;
     }
 
     &.style-guide-body {
@@ -196,16 +196,4 @@ p, ul, ol, pre, table, blockquote {
 a {
     text-decoration:none;
     color: $site-col-1;
-}
-
-
-// Elements that hide when menu is focused
-
-img, hr, form {
-
-    transition: opacity 0.2s ease-in-out;
-    
-    [ui-menu-state="is-open"] & {
-        opacity: 0;
-    }
 }

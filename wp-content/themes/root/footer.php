@@ -14,6 +14,10 @@
 		</div>
 		<!-- /wrapper -->
 
+		<div ui-exploder class="exploder">
+			<i class="exploder__core"></i>
+		</div>
+
 		<?php wp_footer(); ?>
 
 		<script src="<?php echo get_template_directory_uri(); ?>/app/scripts/main.js"></script>
