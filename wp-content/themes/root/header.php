@@ -39,7 +39,7 @@
 
 							<li class="mega-menu__item">
 								<p>5 Most Popular Recipes</p>
-								<ul>
+								<ul class="mega-menu__list">
 									<li><a href="#" title="">Banan-o-rama loaf with nuts and stuff</a></li>
 									<li><a href="#" title="">Totally sweet muffins with seed of the poppy</a></li>
 									<li><a href="#" title="">Tag Here Too</a></li>
@@ -48,7 +48,7 @@
 								</ul>
 
 								<p>5 Latest Recipes</p>
-								<ul>
+								<ul class="mega-menu__list">
 									<li><a href="#" title="">Tag Here Too</a></li>
 									<li><a href="#" title="">Totally sweet muffins with seed of the poppy</a></li>
 									<li><a href="#" title="">Banan-o-rama loaf with nuts</a></li>
@@ -57,7 +57,7 @@
 								</ul>
 
 								<p>Share The Love</p>
-								<ul>
+								<ul class="mega-menu__list--social">
 									<li><a href="#" title="">Link</a></li>
 									<li><a href="#" title="">Link</a></li>
 									<li><a href="#" title="">Link</a></li>
@@ -68,18 +68,9 @@
 						 --><li class="mega-menu__item">
 								<?php get_template_part('searchform'); ?>
 								<p>Popular Tags &amp; Ingredients</p>
-								<ul>
-									<li><a href="#" title="">Tag</a></li>
-									<li><a href="#" title="">Tag Here</a></li>
-									<li><a href="#" title="">Tag Here Too</a></li>
-									<li><a href="#" title="">Tag Here</a></li>
-									<li><a href="#" title="">Tag Here</a></li>
-									<li><a href="#" title="">Tag</a></li>
-									<li><a href="#" title="">Tag Here</a></li>
-									<li><a href="#" title="">Tag Here Too</a></li>
-									<li><a href="#" title="">Tag Here</a></li>
-									<li><a href="#" title="">Tag Here</a></li>
-								</ul>
+
+								<?php show_top_tags(); ?>
+
 							</li>
 
 						</ul>

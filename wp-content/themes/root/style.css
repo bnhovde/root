@@ -1628,6 +1628,7 @@ a {
 .mega-menu {
   position: absolute;
   width: 100%;
+  margin-top: 2em;
   color: white;
   opacity: 0;
   z-index: -1;
@@ -1672,13 +1673,13 @@ a {
 .mega-menu__item p:first-child {
   margin-top: 0;
 }
-.mega-menu__item li {
+.mega-menu__item form {
+  margin: 10px 0 30px 0;
+}
+.mega-menu__list > li {
   font-family: 'Lato';
   font-weight: 300;
   margin: 0.3em 0;
-}
-.mega-menu__item form {
-  margin: 10px 0 30px 0;
 }
 
 [ui-hide-when-menu] {
@@ -1763,6 +1764,78 @@ ol > li:before {
   padding: 0;
   box-sizing: border-box;
   text-align: center;
+}
+
+.menu-tags__tag {
+  display: inline-block;
+}
+.menu-tags__tag > a {
+  display: inline-block;
+  border-bottom: 5px solid white;
+  margin: 0 5px 10px 0;
+  padding: 5px 10px;
+  font-size: 0.75em;
+  font-style: italic;
+  text-transform: uppercase;
+  line-height: 18px;
+  letter-spacing: 1px;
+}
+.menu-tags [ui-tag="banana"] > a {
+  border-color: yellow;
+}
+.menu-tags [ui-tag="baking"] > a {
+  border-color: #c69c6d;
+}
+.menu-tags [ui-tag="bread"] > a {
+  border-color: #8c5a43;
+}
+.menu-tags [ui-tag="fruit"] > a {
+  border-color: #f24a01;
+}
+.menu-tags [ui-tag="vegan"] > a {
+  border-color: #7cc800;
+}
+.menu-tags [ui-tag="banana bread"] > a {
+  border-color: #bb8e1a;
+}
+.menu-tags [ui-tag="snack"] > a {
+  border-color: #51cd78;
+}
+.menu-tags [ui-tag="instagram"] > a {
+  border-color: #517fa4;
+}
+.menu-tags [ui-tag="kickstarter"] > a {
+  border-color: #76cc1e;
+}
+.menu-tags [ui-tag="lanyrd"] > a {
+  border-color: #152e51;
+}
+.menu-tags [ui-tag="lastfm"] > a {
+  border-color: #d51007;
+}
+.menu-tags [ui-tag="linkedin"] > a {
+  border-color: #007bb6;
+}
+.menu-tags [ui-tag="photodrop"] > a {
+  border-color: #cdb6e3;
+}
+.menu-tags [ui-tag="pinterest"] > a {
+  border-color: #cb2027;
+}
+.menu-tags [ui-tag="rdio"] > a {
+  border-color: #0088da;
+}
+.menu-tags [ui-tag="soundcloud"] > a {
+  border-color: #ff6600;
+}
+.menu-tags [ui-tag="twitter"] > a {
+  border-color: #00aced;
+}
+.menu-tags [ui-tag="vimeo"] > a {
+  border-color: #aad450;
+}
+.menu-tags [ui-tag="youtube"] > a {
+  border-color: #bb0000;
 }
 
 .exploder {

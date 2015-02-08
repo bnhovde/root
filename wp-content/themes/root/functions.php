@@ -507,4 +507,40 @@ if(function_exists("register_field_group"))
     ));
 }
 
+
+/*------------------------------------*\
+    Top tags function for mega menu
+\*------------------------------------*/
+
+
+function show_top_tags() {
+        $tags = get_tags();
+        $output = '<ul class="menu-tags">';
+
+        if (empty($tags))
+                return;
+
+        $counts = $tag_links = array();
+        foreach ( (array) $tags as $tag ) {
+                $counts[$tag->name] = $tag->count;
+                $tag_links[$tag->name] = get_tag_link( $tag->term_id );
+        }
+
+        asort($counts);
+        $counts = array_reverse( $counts, true );
+
+        $i = 0;
+        foreach ( $counts as $tag => $count ) {
+                $i++;
+                $tag_link = clean_url($tag_links[$tag]);
+                $tagFull = wp_specialchars( $tag );
+                $tag = str_replace(' ', '&nbsp;', wp_specialchars( $tag ));
+                if($i < 11){
+                        $output .= "<li class='menu-tags__tag' ui-tag='$tagFull'><a href=\"$tag_link\">$tag</a></li>";
+                }
+        }
+        $output .= '</ul>';
+
+        print $output;
+}
 ?>

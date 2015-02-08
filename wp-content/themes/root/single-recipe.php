@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-	<main role="main">
+	<main role="main" ui-hide-when-menu>
 	<!-- section -->
 	<section>
 
