@@ -1,0 +1,73 @@
+
+// *************************************
+//
+//   Exploder
+//   -> Exploding circle that covers the
+//   -> page
+//
+// *************************************
+
+
+// -------------------------------------
+//   Variables
+// -------------------------------------
+
+$exploder-bg-col: $site-col-bg;
+$exploder-col: $site-col-1;
+$exploder-size-closed: 60px;
+$exploder-size-open: 80; // Multiplier
+
+
+// -------------------------------------
+//   Base
+// -------------------------------------
+
+.module {
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+
+    background-color: $exploder-bg-col;
+
+    // -------------------------------------
+    //   Elements
+    // -------------------------------------
+
+
+    // ----- Core circle (scale to menu size) ----- // 
+
+    &__core {
+        background-color: $exploder-col;
+        width: $exploder-size-closed;
+        height: $exploder-size-closed;
+        display: block;
+        border-radius: 50%;
+        opacity: 0;
+
+        transition: transform 0.5s ease-in-out;
+
+        [ui-menu-state="is-open"] & {
+            opacity: 1;
+            transform: scale($exploder-size-open);
+        }
+        [ui-menu-state="is-closing"] & {
+            opacity: 1;
+            transition: all 0.25s ease-out;
+        }
+    }
+
+
+    // -------------------------------------
+    //   Variations
+    // -------------------------------------
+
+
+    // ----- Variation description ----- // 
+
+    & -variation {}
+
+}
