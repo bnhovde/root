@@ -1847,15 +1847,16 @@ ol > li:before {
   border-color: #b00;
 }
 
-.exploder {
+.module {
   position: fixed;
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
   z-index: -1;
+  background-color: white;
 }
-.exploder__core {
+.module__core {
   background-color: #1a1a1a;
   width: 60px;
   height: 60px;
@@ -1865,12 +1866,12 @@ ol > li:before {
   transition: -webkit-transform 0.5s ease-in-out;
   transition: transform 0.5s ease-in-out;
 }
-[ui-menu-state="is-open"] .exploder__core {
+[ui-menu-state="is-open"] .module__core {
   opacity: 1;
   -webkit-transform: scale(80);
           transform: scale(80);
 }
-[ui-menu-state="is-closing"] .exploder__core {
+[ui-menu-state="is-closing"] .module__core {
   opacity: 1;
   transition: all 0.25s ease-out;
 }

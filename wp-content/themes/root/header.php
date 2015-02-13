@@ -17,7 +17,7 @@
 		<?php wp_head(); ?>
 
 	</head>
-	<body <?php body_class(); ?> ui-menu-state>
+	<body <?php body_class(); ?> ui-menu-state ng-app="rootApp">
 
 		<div class="wrapper">
 
@@ -28,7 +28,7 @@
 					</a>
 
 					<div class="logo">
-						<a class="logo__text" href="<?php echo home_url(); ?>">root.</a>
+						<a class="logo__text" href="<?php echo home_url(); ?>"><?php bloginfo(); ?></a>
 					</div>
 
 					<nav class="nav" role="navigation">

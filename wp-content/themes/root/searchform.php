@@ -1,8 +1,5 @@
 <!-- search -->
-<div class="search">
-    <form method="get" action="<?php echo home_url(); ?>" role="search">
-    	<input class="search__input" type="search" name="s" placeholder="<?php _e( 'Search for recipes/ingredients', 'root' ); ?>">
-    </form>
-    <ul id="search__results"></ul>
+<div class="search" ng-controller="searchCtrl">
+    <div ng-include="'<?php echo get_template_directory_uri(); ?>/app/scripts/search/search.html'"></div>
 </div>
 <!-- /search -->

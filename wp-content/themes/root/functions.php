@@ -8,7 +8,70 @@
 	External Modules/Files
 \*------------------------------------*/
 
-// Load any external files you have here
+//   Create Script queues
+
+function grainstore_script_queue() {
+
+    // register AngularJS extentions
+    wp_register_script('angular', get_bloginfo('template_directory').'/bower_components/angular/angular.js', array(), null, true);
+    wp_register_script('app-main', get_bloginfo('template_directory').'/app/scripts/app.js', array(), null, true);
+    wp_register_script('app-filters', get_bloginfo('template_directory').'/app/scripts/app.filters.js', array(), null, true);
+    wp_register_script('angular-cookies', get_bloginfo('template_directory').'/bower_components/angular-cookies/angular-cookies.js', array(), null, true);
+    wp_register_script('angular-sanitize', get_bloginfo('template_directory').'/bower_components/angular-sanitize/angular-sanitize.js', array(), null, true);
+    wp_register_script('angular-ui-router', get_bloginfo('template_directory').'/bower_components/angular-ui-router/release/angular-ui-router.js', array(), null, true);
+    wp_register_script('angular-animate', get_bloginfo('template_directory').'/bower_components/angular-animate/angular-animate.js', array(), null, true);
+    wp_register_script('angular-touch', get_bloginfo('template_directory').'/bower_components/angular-touch/angular-touch.min.js', array(), null, true);
+
+    wp_register_script('search-controller', get_bloginfo('template_directory').'/app/scripts/search/search.controller.js', array(), null, true);
+
+    // Angular Helpers
+    wp_register_script('angular-helpers', get_bloginfo('template_directory').'/bower_components/angular-resource/angular-resource.js', 
+        array(
+            'angular-cookies', 
+            'angular-sanitize', 
+            'angular-ui-router',
+            'angular-animate',
+            'angular-touch'
+            ), 
+        null, true);
+
+    // Application
+    wp_register_script('app', get_bloginfo('template_directory').'/app/scripts/app.services.js', array(
+            'app-main',
+            'app-filters'
+            ), 
+        null, true);    
+
+    // Application Modules
+    wp_register_script('app-modules', get_bloginfo('template_directory').'/app/scripts/search/search.js', 
+        array( 
+            'search-controller',
+         ), null, true);
+
+    // enqueue all scripts
+    wp_enqueue_script('angular');
+    wp_enqueue_script('angular-helpers');
+    wp_enqueue_script('app');
+    wp_enqueue_script('app-modules');
+
+    // Pass in API, theme directory and website url
+    wp_localize_script( 'angular', 'AppAPI', array( 'url' => get_bloginfo('url').'/wp-json/') );
+    wp_localize_script( 'angular', 'BlogInfo', array( 'url' => get_bloginfo('template_directory').'/', 'site' => get_bloginfo('wpurl'), 'nonce' => wp_create_nonce( 'wp_json' )) );
+   
+    // Provide user id and avatar if logged in
+    if ( is_user_logged_in() ) {
+        $userId = get_current_user_id();
+        $avatarEl = get_avatar( $userId, 50 );
+        $avatarResult = preg_match("/src='(.*?)'/i", $avatarEl, $matches);
+        $avatar = $matches[1];
+    } else {
+        $userId = 0;
+        $avatar = get_bloginfo('wpurl') + 'assets/images/blank.jpg';
+    }
+    wp_localize_script( 'angular', 'userInfo', array( 'userId' => $userId, 'avatar' => $avatar ) );
+
+}
+add_action('wp_enqueue_scripts', 'grainstore_script_queue');
 
 /*------------------------------------*\
 	Theme Support

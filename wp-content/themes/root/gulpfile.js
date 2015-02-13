@@ -5,14 +5,13 @@ var gulp = require('gulp');
 var $ = require('gulp-load-plugins')();
 
 gulp.task('styles', function () {
-  return gulp.src('app/styles/scss/application.scss')
+  return gulp.src('app/styles/scss/style.scss')
     .pipe($.plumber())
     .pipe($.rubySass({
       style: 'expanded',
       precision: 10
     }))
     .pipe($.autoprefixer({browsers: ['last 1 version']}))
-    .pipe($.rename('style.css'))
     .pipe(gulp.dest(''));
 });
 

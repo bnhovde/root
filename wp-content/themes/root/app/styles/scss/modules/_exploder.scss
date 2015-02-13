@@ -12,7 +12,6 @@
 //   Variables
 // -------------------------------------
 
-$exploder-bg-col: $site-col-bg;
 $exploder-col: $site-col-1;
 $exploder-size-closed: 60px;
 $exploder-size-open: 80; // Multiplier
@@ -22,7 +21,7 @@ $exploder-size-open: 80; // Multiplier
 //   Base
 // -------------------------------------
 
-.module {
+.exploder {
 
     position: fixed;
     top: 0;
@@ -30,8 +29,6 @@ $exploder-size-open: 80; // Multiplier
     bottom: 0;
     right: 0;
     z-index: -1;
-
-    background-color: $exploder-bg-col;
 
     // -------------------------------------
     //   Elements
