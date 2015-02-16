@@ -1,36 +1,26 @@
 'use strict';
 
 angular.module('rootApp')
-    .controller('searchCtrl', function($scope, $rootScope, $q, API) {
+    .controller('searchCtrl', function($scope, $rootScope, $q, SEARCH) {
 
         console.log('loading search controller');
 
-        // load posts from the WordPress API
-        // var getHomeIconsPromise = API.getHomeIcons();
+        $scope.tags = [];
+        $scope.itemsLimit = 50;
 
-        // $q.all([
-        //     getHomeIconsPromise.$promise
-        // ]).then(function() {
+        // load tags from the WordPress API
+        var tagPromise = SEARCH.query();
 
-        //     var postData = getHomeIconsPromise;
+        $q.all([
+            tagPromise.$promise
+        ]).then(function() {
 
-        //     // Format the data to be more usable in the view
-        //     angular.forEach(postData, function(value) {
-        //         var weight = parseInt( value.custom_fields.weight );
+            var postData = tagPromise;
+            $scope.tags = postData;
 
-        //         $scope.homePageIcons.push({
-        //             'id'        : value.id,
-        //             'title'     : value.title,
-        //             'icon'      : value.custom_fields.icon_image,
-        //             'enabled'   : value.custom_fields.enabled,
-        //             'link'      : value.custom_fields.link,
-        //             'sortWeight': weight
-        //         });
-        //     });
-
-        // }).catch(function(err) {
-        //     err = err.data;
-        //     $scope.errors.other = err.message;
-        // });
+        }).catch(function(err) {
+            err = err.data;
+            $scope.errors.other = err.message;
+        });
 
     });

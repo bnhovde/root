@@ -575,7 +575,6 @@ if(function_exists("register_field_group"))
     Top tags function for mega menu
 \*------------------------------------*/
 
-
 function show_top_tags() {
         $tags = get_tags();
         $output = '<ul class="menu-tags">';
@@ -600,7 +599,7 @@ function show_top_tags() {
                 $tag = str_replace(' ', '&nbsp;', wp_specialchars( $tag ));
                 if($i < 11){
                         $output .= "<li class='menu-tags__tag' ui-tag='$tagFull'><a href=\"$tag_link\">$tag</a></li>";
-                }
+                }   
         }
         $output .= '</ul>';
 

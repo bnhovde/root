@@ -10,7 +10,6 @@ angular.module('rootApp', [
 
 ])
     .config(function($animateProvider) {
-        
         console.log('init');
     })
 
