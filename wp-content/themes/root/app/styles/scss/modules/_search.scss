@@ -40,6 +40,23 @@ $some-color: #c0deed;
         text-align: center;
     }
 
+    // ----- Element description ----- // 
+
+    &__results {
+
+        > li {
+            display: inline-block;
+            width: 50%;
+            height: 100px;
+            background-color: #3D3D3D;
+            text-align: center;
+
+            @include breakpoint(teen-bear){
+                width: 25%;
+            }
+        }
+
+    }
 
     // -------------------------------------
     //   Variations

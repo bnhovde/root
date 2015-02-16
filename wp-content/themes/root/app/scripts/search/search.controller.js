@@ -1,7 +1,8 @@
-'use strict';
 
 angular.module('rootApp')
     .controller('searchCtrl', function($scope, $rootScope, $q, SEARCH) {
+    
+        'use strict';
 
         console.log('loading search controller');
 

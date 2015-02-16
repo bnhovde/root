@@ -2,6 +2,6 @@
     <input class="search__input" type="search" name="s" placeholder="Search for recipes/ingredients" ng-model="search">
 </form>
 <p>Results for {{search}}</p>
-<ul id="search__results" ng-repeat="tag in tags | filter: search | limitTo: itemsLimit">
-    <li>{{ tag.name }}</li>
+<ul class="search__results">
+    <li ng-repeat="tag in tags | filter: search | limitTo: itemsLimit">{{ tag.name }}</li>
 </ul>

@@ -1774,6 +1774,18 @@ ol > li:before {
   box-sizing: border-box;
   text-align: center;
 }
+.search__results > li {
+  display: inline-block;
+  width: 50%;
+  height: 100px;
+  background-color: #3D3D3D;
+  text-align: center;
+}
+@media (min-width: 48em) {
+  .search__results > li {
+    width: 25%;
+  }
+}
 
 .menu-tags__tag {
   display: inline-block;
