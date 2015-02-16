@@ -1,0 +1,82 @@
+
+
+// *************************************
+//
+//   Overview of module and usage
+//
+// *************************************
+
+
+// -------------------------------------
+//   Variables
+// -------------------------------------
+
+$tag-colors: (
+    banana: #ffff00,
+    baking: #c69c6d,
+    bread: #8c5a43,
+    fruit: #F24A01,
+    vegan: #7cc800,
+    banana bread: #BB8E1A,
+    snack: #51CD78,
+    instagram: #517fa4,
+    kickstarter: #76cc1e,
+    lanyrd: #152e51,
+    lastfm: #d51007,
+    linkedin: #007bb6,
+    photodrop: #cdb6e3,
+    pinterest: #cb2027,
+    rdio: #0088da,
+    soundcloud: #f60,
+    twitter: #00aced,
+    vimeo: #aad450,
+    youtube: #b00
+);
+
+
+// -------------------------------------
+//   Base
+// -------------------------------------
+
+.tags {
+
+
+    // -------------------------------------
+    //   Elements
+    // -------------------------------------
+
+
+    // ----- Element description ----- // 
+
+    &__tag {
+
+        display: inline-block;
+
+        > a {
+            display: inline-block;
+            border-bottom: 5px solid white;
+            margin: 0 5px 10px 0;
+            padding: 5px 10px;
+            font-size: 0.75em;
+            font-style: italic;
+            text-transform: uppercase;
+            line-height: 18px;
+            letter-spacing: 1px;
+        }
+    }
+
+
+    // -------------------------------------
+    //   Variations
+    // -------------------------------------
+
+
+    // ----- Variation description ----- // 
+
+    @each $color, $hex in $tag-colors {
+        [ui-tag="#{$color}"] > a {
+            border-color: $hex;
+        }
+    }
+
+}

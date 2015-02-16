@@ -68,3 +68,37 @@ $some-color: #c0deed;
     & -variation {}
 
 }
+
+// -------------------------------------
+//   Animations
+// -------------------------------------
+
+
+
+.search__results > li {
+
+    // Staggered fadein/out animation
+
+    &.ng-enter-stagger,
+    &.ng-hide-remove-stagger,
+    &.ng-hide-add-stagger,
+    &.ng-move-stagger {
+      animation-delay:0.05s;
+      animation-duration:0;
+    }
+
+    &.ng-enter,
+    &.ng-hide-remove {
+        animation: 0.3s fadeIn;
+    }
+
+    &.ng-leave,
+    &.ng-hide-add {
+        animation: 0.3s fadeOut;
+    }
+
+    &.ng-enter,
+    &.ng-hide-remove {
+        opacity:0;
+    }
+}

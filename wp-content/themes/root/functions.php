@@ -577,7 +577,7 @@ if(function_exists("register_field_group"))
 
 function show_top_tags() {
         $tags = get_tags();
-        $output = '<ul class="menu-tags">';
+        $output = '<ul class="tags">';
 
         if (empty($tags))
                 return;
@@ -598,7 +598,7 @@ function show_top_tags() {
                 $tagFull = wp_specialchars( $tag );
                 $tag = str_replace(' ', '&nbsp;', wp_specialchars( $tag ));
                 if($i < 11){
-                        $output .= "<li class='menu-tags__tag' ui-tag='$tagFull'><a href=\"$tag_link\">$tag</a></li>";
+                        $output .= "<li class='tags__tag' ui-tag='$tagFull'><a href=\"$tag_link\">$tag</a></li>";
                 }   
         }
         $output .= '</ul>';
