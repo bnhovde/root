@@ -1,6 +1,6 @@
 
 angular.module('rootApp')
-    .controller('searchCtrl', function($scope, $rootScope, $q, SEARCH) {
+    .controller('searchCtrl', function($scope, $rootScope, $q, TAGS, POSTS) {
     
         'use strict';
 
@@ -10,14 +10,18 @@ angular.module('rootApp')
         $scope.itemsLimit = 50;
 
         // load tags from the WordPress API
-        var tagPromise = SEARCH.query();
+        var tagPromise = TAGS.query();
+        var articlePromise = POSTS.query();
 
         $q.all([
-            tagPromise.$promise
+            tagPromise.$promise,
+            articlePromise.$promise
         ]).then(function() {
 
-            var postData = tagPromise;
-            $scope.tags = postData;
+            var tagData = tagPromise;
+            var postData = articlePromise;
+            $scope.tags = tagData;
+            $scope.articles = postData;
 
         }).catch(function(err) {
             err = err.data;

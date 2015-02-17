@@ -6,9 +6,18 @@ angular.module('rootApp')
     //   Common API calls
     // -------------------------------------
 
-    .factory('SEARCH', function($resource, WPCONF) {
+    .factory('TAGS', function($resource, WPCONF) {
         return $resource(
             WPCONF.api + 'taxonomies/post_tag/terms',
+            {
+                _wp_json_nonce: WPCONF.nonce
+            }
+        );
+    })
+
+    .factory('POSTS', function($resource, WPCONF) {
+        return $resource(
+            WPCONF.api + 'posts/?type=recipe&filter[posts_per_page]=-1',
             {
                 _wp_json_nonce: WPCONF.nonce
             }

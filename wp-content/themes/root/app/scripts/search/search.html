@@ -1,7 +1,21 @@
 <form role="search">
     <input class="search__input" type="search" name="s" placeholder="Search for recipes/ingredients" ng-model="search">
 </form>
-<p>Results for {{search}}</p>
-<ul class="search__results">
-    <li ng-repeat="tag in tags | filter: search | limitTo: itemsLimit">{{ tag.name }}</li>
-</ul>
+
+<div class="search__results">
+    <p>Article results for {{search}}</p>
+    <ul class="article-grid">
+        <li class="article-grid__item" ng-repeat="article in articles | filter: search | limitTo: itemsLimit">
+            <a ng-href="{{ article.link }}" title="{{ article.title }}">{{ article.title }}</a>
+        </li>
+    </ul>
+</div>
+
+<div class="search__results search__results--tags">
+    <p>Tag results for {{search}}</p>
+    <ul class="tags">
+        <li class="tags__tag" ui-tag="{{ tag.name }}" ng-repeat="tag in tags | filter: search | limitTo: itemsLimit">
+            <a ng-href="{{ tag.link }}" title="{{ tag.name }}">{{ tag.name }}</a>
+        </li>
+    </ul>
+</div>

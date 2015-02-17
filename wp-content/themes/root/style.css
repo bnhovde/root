@@ -1,4 +1,4 @@
-@charset "UTF-8";
+@charset "CP850";
 /*! normalize.css v3.0.0 | MIT License | git.io/normalize */
 /**
  * 1. Set default font family to sans-serif.
@@ -1486,6 +1486,7 @@ a {
     -webkit-transform: translate3d(0%, 50%, 0);
             transform: translate3d(0%, 50%, 0);
   }
+
   100% {
     opacity: 1;
     -webkit-transform: translate(0%, 0%);
@@ -1499,6 +1500,7 @@ a {
     -webkit-transform: translate3d(0%, 50%, 0);
             transform: translate3d(0%, 50%, 0);
   }
+
   100% {
     opacity: 1;
     -webkit-transform: translate(0%, 0%);
@@ -1511,6 +1513,7 @@ a {
     -webkit-transform: translate(0%, 0%);
             transform: translate(0%, 0%);
   }
+
   100% {
     opacity: 0;
     -webkit-transform: translate3d(0%, 50%, 0);
@@ -1523,6 +1526,7 @@ a {
     -webkit-transform: translate(0%, 0%);
             transform: translate(0%, 0%);
   }
+
   100% {
     opacity: 0;
     -webkit-transform: translate3d(0%, 50%, 0);
@@ -1823,18 +1827,6 @@ ol > li:before {
   box-sizing: border-box;
   text-align: center;
 }
-.search__results > li {
-  display: inline-block;
-  width: 50%;
-  height: 100px;
-  background-color: #3D3D3D;
-  text-align: center;
-}
-@media (min-width: 48em) {
-  .search__results > li {
-    width: 25%;
-  }
-}
 
 .search__results > li.ng-enter-stagger, .search__results > li.ng-hide-remove-stagger, .search__results > li.ng-hide-add-stagger, .search__results > li.ng-move-stagger {
   -webkit-animation-delay: 0.05s;
@@ -1869,7 +1861,7 @@ ol > li:before {
   letter-spacing: 1px;
 }
 .tags [ui-tag="banana"] > a {
-  border-color: #ffff00;
+  border-color: yellow;
 }
 .tags [ui-tag="baking"] > a {
   border-color: #c69c6d;
@@ -1878,16 +1870,16 @@ ol > li:before {
   border-color: #8c5a43;
 }
 .tags [ui-tag="fruit"] > a {
-  border-color: #F24A01;
+  border-color: #f24a01;
 }
 .tags [ui-tag="vegan"] > a {
   border-color: #7cc800;
 }
 .tags [ui-tag="banana bread"] > a {
-  border-color: #BB8E1A;
+  border-color: #bb8e1a;
 }
 .tags [ui-tag="snack"] > a {
-  border-color: #51CD78;
+  border-color: #51cd78;
 }
 .tags [ui-tag="instagram"] > a {
   border-color: #517fa4;
@@ -1914,7 +1906,7 @@ ol > li:before {
   border-color: #0088da;
 }
 .tags [ui-tag="soundcloud"] > a {
-  border-color: #f60;
+  border-color: #ff6600;
 }
 .tags [ui-tag="twitter"] > a {
   border-color: #00aced;
@@ -1923,7 +1915,7 @@ ol > li:before {
   border-color: #aad450;
 }
 .tags [ui-tag="youtube"] > a {
-  border-color: #b00;
+  border-color: #bb0000;
 }
 
 .exploder {

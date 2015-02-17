@@ -2,7 +2,7 @@
 
 // *************************************
 //
-//   Search module
+//   Recipe/article grid
 //
 // *************************************
 
@@ -20,7 +20,7 @@ $some-color: #c0deed;
 //   Base
 // -------------------------------------
 
-.search {
+.article-grid {
 
 
     // -------------------------------------
@@ -30,22 +30,20 @@ $some-color: #c0deed;
 
     // ----- Element description ----- // 
 
-    &__input {
-        width: 100%;
-        line-height: 45px;
-        color: #1a1a1a;
-        border: 0;
-        padding: 0;
-        box-sizing: border-box;
+    &__item {
+
+        display: inline-block;
+        width: 50%;
+        height: 100px;
+        background-color: #3D3D3D;
         text-align: center;
+        vertical-align: top;
+
+        @include breakpoint(teen-bear){
+            width: 25%;
+        }
     }
 
-    // ----- Element description ----- // 
-
-    &__results {
-
-
-    }
 
     // -------------------------------------
     //   Variations
@@ -58,13 +56,12 @@ $some-color: #c0deed;
 
 }
 
+
 // -------------------------------------
 //   Animations
 // -------------------------------------
 
-
-
-.search__results > li {
+.article-grid__item {
 
     // Staggered fadein/out animation
 
