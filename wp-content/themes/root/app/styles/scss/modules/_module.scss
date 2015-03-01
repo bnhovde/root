@@ -1,26 +1,23 @@
-
-
 // *************************************
 //
-//   Overview of module and usage
+//   Example module
+//   -> Overview of module and usage
 //
 // *************************************
-
-
-// -------------------------------------
-//   Variables
-// -------------------------------------
-
-$some-variable: 7em;
-$some-color: #3B5998;
-$some-color: #c0deed;
-
 
 // -------------------------------------
 //   Base
 // -------------------------------------
 
 .module {
+
+    // -------------------------------------
+    //   Variables
+    // -------------------------------------
+
+    $module-var:    7em;
+    $module-col-fg: #3B5998;
+    $module-col-bg: #c0deed;
 
 
     // -------------------------------------
@@ -40,6 +37,6 @@ $some-color: #c0deed;
 
     // ----- Variation description ----- // 
 
-    & -variation {}
+    &--variation {}
 
 }
