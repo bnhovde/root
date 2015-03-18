@@ -7,12 +7,19 @@
 
 
 // -------------------------------------
-//   Variables
+//   Global Variables
 // -------------------------------------
 
 // ----- Site Sizing ----- //
 
-$site-max-width: 764px;
+$site-width: 764px;
+$site-outer-width: 1044px;
+$site-size-unit: 6px;
+
+// ----- Site Border types ----- //
+$g-border-thin: $site-size-unit * 1;
+$g-border-medium: $site-size-unit * 2;
+$g-border-bold: $site-size-unit * 3;
 // ...
 
 
